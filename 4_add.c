@@ -14,7 +14,7 @@ UNUSED(stack);
 
 if (args->stack_len < 2)
 {
-dprintf(2, "L%d: can't add, stack too short\n", line_num);
+printf(2, "L%d: can't add, stack too short\n", line_num);
 free_all_args();
 exit(EXIT_FAILURE);
 }
