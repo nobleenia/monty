@@ -7,7 +7,6 @@
  */
 void push(stack_t **stack, unsigned int line_num)
 {
-stack_t *temp;
 if (args->num_words <= 1 || !(is_num(args->words[1])))
 {
 free_args();
@@ -24,7 +23,7 @@ exit(EXIT_FAILURE);
 }
 
 (*stack)->next = (*stack)->prev = NULL;
-(*stack)->n = (int)atoi(args->words[1]);
+(*stack)->n = (int) atoi(args->words[1]);
 
 if (args->head == NULL)
 {
@@ -40,7 +39,7 @@ args->head = *stack;
 }
 else
 {
-temp = args->head;
+stack_t *temp = args->head;
 
 while (temp->next)
 {
@@ -50,4 +49,5 @@ temp->next = *stack;
 (*stack)->prev = temp;
 }
 }
+args->stack_len += 1;
 }

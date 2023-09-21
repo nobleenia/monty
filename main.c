@@ -16,7 +16,7 @@ stack_t *stack = NULL;
 
 if (argc != 2)
 {
-dprintf(2, "USAGE: monty file\n");
+fprintf(stderr, "USAGE: monty file\n");
 exit(EXIT_FAILURE);
 }
 
@@ -50,21 +50,21 @@ while (getline(&args->line, &n, args->stream) != -1)
 args->line_number += 1;
 str_tok();
 get_function();
- 
+
 if (args->num_words != 0)
 {
 args->instruction->f(&stack, args->line_number);
-free_words();
 }
+free_words();
 }
 
 if (args->stream != NULL)
 {
 fclose(args->stream);
 args->stream = NULL;
+}
 
 free_args();
-}
 
 return (0);
 }
