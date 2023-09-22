@@ -3,7 +3,7 @@
 /**
  * add - Add the top two elements of the stack
  * @stack: pointer to the stack
- * @line_number: line number where the add function is called
+ * @line_num: line number where the add function is called
  *
  * Return: 0
  */
